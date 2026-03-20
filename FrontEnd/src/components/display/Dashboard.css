@@ -1,0 +1,72 @@
+.student-dashboard-page {
+  min-height: 80vh;
+  padding: 50px 40px;
+  background-color: #f8fafc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-dashboard-page h1 {
+  font-size: 32px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.student-dashboard-page h2 {
+  font-size: 22px;
+  color: #334155;
+  margin-bottom: 30px;
+}
+
+.student-dashboard-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+  font-size: 18px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .student-dashboard-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .student-dashboard-page h1 {
+    font-size: 28px;
+  }
+
+  .student-dashboard-page h2 {
+    font-size: 20px;
+  }
+}
