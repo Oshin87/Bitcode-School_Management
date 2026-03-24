@@ -1,0 +1,26 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page layout */
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* App wrapper */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page content grows */
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  background-color: #f8fafc;
+}

@@ -1,0 +1,80 @@
+.display-page {
+  min-height: 80vh;
+  width: 100%;
+  padding: 50px 40px;
+  background-color: #f8fafc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display-page h1 {
+  font-size: 32px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.display-page h2 {
+  font-size: 22px;
+  color: #334155;
+  margin-bottom: 30px;
+}
+
+.dashboard-content {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.dashboard-content h3 {
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.dashboard-content p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #38bdf8;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #0ea5e9;
+}
+
+@media (max-width: 768px) {
+  .display-page {
+    padding: 40px 20px;
+  }
+
+  .dashboard-content {
+    padding: 25px 20px;
+  }
+
+  .display-page h1 {
+    font-size: 28px;
+  }
+
+  .display-page h2 {
+    font-size: 20px;
+  }
+}

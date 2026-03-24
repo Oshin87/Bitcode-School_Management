@@ -1,0 +1,99 @@
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.user-type-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.user-type-tabs button {
+  padding: 8px 20px;
+  border: 1px solid #0f172a;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.user-type-tabs button.active,
+.user-type-tabs button:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+.info-text {
+  margin: 10px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0ea5e9;
+}
+
+@media (max-width: 500px) {
+  .login-container {
+    padding: 30px 25px;
+  }
+
+  .user-type-tabs {
+    gap: 10px;
+  }
+}
