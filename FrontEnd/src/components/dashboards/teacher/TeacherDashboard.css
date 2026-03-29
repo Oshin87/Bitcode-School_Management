@@ -1,0 +1,50 @@
+.teacher-dashboard {
+    padding: 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+.teacher-header {
+    background: linear-gradient(135deg, #198754, #20c997);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.teacher-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+}
+
+.teacher-card h3 {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #198754;
+}
+
+.table th {
+    background-color: #198754;
+    color: white;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .teacher-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
