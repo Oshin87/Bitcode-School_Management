@@ -1,0 +1,46 @@
+.sec-container {
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.sec-header {
+    background: linear-gradient(135deg, #198754, #51cf66);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.sec-card:hover {
+    transform: translateY(-5px);
+}
+
+.sec-card h5 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.sec-card button {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sec-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

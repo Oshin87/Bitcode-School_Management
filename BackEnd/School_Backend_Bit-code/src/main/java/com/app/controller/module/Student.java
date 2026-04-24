@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -20,12 +21,25 @@ public class Student {
 	private long std_phoneno;
 	private double std_fees;
 	private String std_gender;
+	private String status;
 	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subject_id")
 	private Subject subject;
 	private String std_password;
 	
 	public Student() {}
 	
+	
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
 	public String getStd_email() {
 		return std_email;
 	}

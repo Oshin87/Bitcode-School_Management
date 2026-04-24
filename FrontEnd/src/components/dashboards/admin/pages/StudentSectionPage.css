@@ -1,0 +1,97 @@
+.section-dashboard {
+    padding: 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+.section-header {
+    background: linear-gradient(135deg, #198754, #20c997);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+.section-header h2 {
+    margin: 0;
+    font-weight: 600;
+}
+.section-header p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+.section-header button {
+    font-weight: 500;
+    border-radius: 8px;
+}
+.section-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+.section-card:hover {
+    transform: translateY(-4px);
+}
+.table th {
+    background-color: #198754;
+    color: white;
+    text-align: center;
+}
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+.badge-active {
+    background-color: #198754;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-inactive {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.modal-content {
+    border-radius: 12px;
+}
+.modal-title {
+    font-weight: 600;
+}
+.form-control, .form-select {
+    border-radius: 8px;
+}
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+    border-color: #198754;
+}
+button.btn-success {
+    background-color: #198754;
+    border: none;
+}
+button.btn-success:hover {
+    background-color: #157347;
+}
+button.btn-warning {
+    font-weight: 500;
+}
+button.btn-danger {
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .section-header button {
+        width: 100%;
+    }
+}

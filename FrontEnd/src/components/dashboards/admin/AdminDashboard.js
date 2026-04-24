@@ -41,8 +41,8 @@ function AdminDashboard({ data, onLogout }) {
                 <Col md={4}>
                     <Card className="admin-card text-center">
                         <Card.Body>
-                            <h5>Manage Sections</h5>
-                            <Button onClick={() => setPage("sections")}>Go to Sections</Button>
+                            <h5>Manage Student Sections</h5>
+                            <Button onClick={() => setPage("sections")}>Go to Student Sections</Button>
                         </Card.Body>
                     </Card>
                 </Col>

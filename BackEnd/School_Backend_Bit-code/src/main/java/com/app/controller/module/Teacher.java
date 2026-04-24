@@ -16,7 +16,26 @@ public class Teacher {
 	private String t_gender;
 	private String t_subject;
 	private double t_salary;
+	private String t_password;
+	private String status;
+
 	
+	public String getT_password() {
+		return t_password;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setT_password(String t_password) {
+		this.t_password = t_password;
+	}
+
 	public Teacher() {}
 
 	public int getT_id() {

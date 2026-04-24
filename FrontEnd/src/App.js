@@ -12,6 +12,8 @@ import TeacherDashboard from './components/dashboards/teacher/TeacherDashboard';
 import StudentSectionPage from './components/dashboards/admin/pages/StudentSectionPage';
 import StudentPage from './components/dashboards/admin/pages/StudentPage';
 import TeacherPage from './components/dashboards/admin/pages/TeacherPage';
+import TeacherPageSS from './components/dashboards/staff/pages/TeacherPageSS';
+import StudentPageSS from './components/dashboards/staff/pages/StudentPageSS';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='/studentSectionPage' Component={StudentSectionPage} />
           <Route path='/studentPage' Component={StudentPage} />
           <Route path='/teacherPage' Component={TeacherPage} />
+          <Route path='/studentSection/teacherPage' Component={TeacherPageSS} />
+          <Route path='/studentSection/StudentPage' Component={StudentPageSS} />          
         </Routes>
       </div>
       <Footer />

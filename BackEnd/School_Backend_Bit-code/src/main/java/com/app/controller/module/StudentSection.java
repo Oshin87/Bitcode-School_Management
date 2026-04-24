@@ -14,9 +14,16 @@ public class StudentSection {
 	private String sec_name;
 	private String sec_email;
 	private String sec_password;
+	private String sec_status;
 	
 	public StudentSection() {}
 	
+	public String getSec_status() {
+		return sec_status;
+	}
+	public void setSec_status(String sec_status) {
+		this.sec_status = sec_status;
+	}
 	public int getSec_id() {
 		return sec_id;
 	}

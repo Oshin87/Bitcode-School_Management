@@ -34,7 +34,7 @@ function AdminStaffLogin() {
 
                 if (request.ok) {
                     let response = await request.json();
-                    console.log("Admin Login Success:", response);
+                    console.log("Admin Login Success :", response);
 
                     setObj(response);
                     setAdminLogin(true);

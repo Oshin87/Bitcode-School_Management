@@ -114,7 +114,7 @@ function TeacherDashboard(props) {
 
             <div className="teacher-header">
                 <div>
-                    <h2>Welcome, {obj?.t_name} 👋</h2>
+                    <h2>Welcome, {obj?.t_name} </h2>
                     <p>{obj?.t_email} | Subject: {obj?.t_subject}</p>
                 </div>
 
@@ -219,7 +219,6 @@ function TeacherDashboard(props) {
                 </Col>
             </Row>
 
-            {/* Marks Modal */}
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Update Marks</Modal.Title>

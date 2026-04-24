@@ -38,7 +38,7 @@ function GenralLogin() {
             } else {
                 let errorText = await request.text();
                 console.log("Login Failed:", errorText);
-                alert("Invalid Credentials!");
+                alert("Invalid Credentials! (OR) \nFor Help Contact Student Section");
             }
         }else{
             let request = await fetch("http://localhost:8080/teacher/login",{
