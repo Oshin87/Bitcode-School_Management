@@ -57,8 +57,12 @@ function TeacherPage(props) {
 
   async function addTeacher() {
     let payload = {
-      ...teacher,
+      t_name: teacher.t_name,
+      t_email: teacher.t_email,
+      t_gender: teacher.t_gender,
+      t_subject: teacher.t_subject,
       t_salary: Number(teacher.t_salary),
+      t_password: teacher.t_password,
       status: teacher.status || "ACTIVE"
     };
 
