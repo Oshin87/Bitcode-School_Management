@@ -28,14 +28,6 @@ public class StudentSectionService {
 		return sr.save(std);
 	}
 	
-	public List<Student> getStudents(int std_class) {
-		return sr.findByClass(std_class);
-	}
-	
-	public void remove(int id) {
-		sr.deleteById(id);
-	}
-	
 	public Teacher createNewTeacher(Teacher t) {
 		return tr.save(t);
 	}
@@ -70,25 +62,21 @@ public class StudentSectionService {
 		return null;
 	}
 
-	public void removeT(int id) {
-		tr.deleteById(id);
+	public StudentSection updatePass(StudentSection sec) {
+		StudentSection s = ssr.findByEmail(sec.getSec_email());
+		if(s!=null) {
+			s.setSec_password(sec.getSec_password());
+			return ssr.save(s);
+		}
+		return null;
 	}
-
-	public List<Teacher> getAllTeacher() {
+	
+	public List<Student> getAllStudents(int std_class) {
+		return sr.findByClass(std_class);
+	}
+	
+	public List<Teacher> getAllTeachers() {
 		return tr.findAll();
-	}
-
-	public StudentSection updateSectionPassword(StudentSection section) {
-
-	    StudentSection existing = ssr.findById(section.getSec_id()).orElse(null);
-
-	    if (existing == null) {
-	        throw new RuntimeException("Section not found");
-	    }
-
-	    existing.setSec_password(section.getSec_password());
-
-	    return ssr.save(existing);
 	}
 	
 

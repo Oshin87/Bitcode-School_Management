@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,37 +44,24 @@ public class StudentSectionController {
 	}
 	
 	@PutMapping("/updatePassword")
-	public ResponseEntity<?> updatePass(@RequestBody StudentSection section) {
-	    if (section.getSec_id() == 0 || section.getSec_password() == null) {
-	        return ResponseEntity.badRequest().body("Invalid request");
-	    }
-	    StudentSection updated = ss.updateSectionPassword(section);
-	    if (updated != null) {
-	        return ResponseEntity.ok(updated);
-	    } else {
-	        return ResponseEntity.status(404).body("Section not found");
-	    }
-	}	
+	public StudentSection updatePass(@RequestBody StudentSection sec) {
+		return ss.updatePass(sec);
+	}
 	
 	@PostMapping("/createNewStudent")
 	public Student createNewStudent(@RequestBody Student std) {
 		return ss.createNewStudent(std);
 	}
 	
-	@GetMapping("/getStudent")
-	public List<Student> getStudentByClass(@RequestParam int std_class) {
-		return ss.getStudents(std_class);
-	}
-	
-	@DeleteMapping("/deleteStudent")
-	public void removeStudent(@RequestParam int id) {
-		ss.remove(id);
-	}
-	
 	@PutMapping("/updateStudent")
 	public ResponseEntity<?> updateStudent(@RequestBody Student std) {
 	    Student s = ss.updateStudent(std);
 	    return ResponseEntity.ok(s);
+	}
+	
+	@GetMapping("/getStudent")
+	public List<Student> getStudent(@RequestParam int std_class) {
+		return ss.getAllStudents(std_class);
 	}
 	
 	@PostMapping("/createNewTeacher")
@@ -89,14 +75,9 @@ public class StudentSectionController {
 	    return ResponseEntity.ok(t);
 	}
 	
-	@DeleteMapping("/deleteTeacher")
-	public void removeTeacher(@RequestParam int id) {
-		ss.removeT(id);
-	}
-	
 	@GetMapping("/getAllTeachers")
-	public List<Teacher> getAllTeacher() {
-		return ss.getAllTeacher();
+	public List<Teacher> getTeachers() {
+		return ss.getAllTeachers();
 	}
 
 }

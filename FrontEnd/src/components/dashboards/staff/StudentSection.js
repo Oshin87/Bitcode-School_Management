@@ -25,7 +25,7 @@ function StudentSectionDashboard({ data, onLogout }) {
         }
 
         let payload = {
-            sec_id: data?.sec_id,
+            sec_email: data?.sec_email,
             sec_password: newPassword
         };
 
@@ -62,7 +62,7 @@ function StudentSectionDashboard({ data, onLogout }) {
                 </div>
 
                 <div className="d-flex gap-2">
-                    <Button variant="warning" onClick={() => setShowPass(true)}>Change Passwor</Button>
+                    <Button variant="warning" onClick={() => setShowPass(true)}>Change Password</Button>
                     <Button variant="danger" onClick={onLogout}>Logout</Button>
                 </div>
             </div>

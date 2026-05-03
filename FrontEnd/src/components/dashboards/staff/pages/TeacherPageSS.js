@@ -20,9 +20,21 @@ function TeacherPageSS(props) {
   });
 
   async function getTeachers() {
-    let res = await fetch("http://localhost:8080/studentSection/getAllTeachers");
-    let data = await res.json();
-    setArr(data);
+    try {
+      let res = await fetch("http://localhost:8080/studentSection/getAllTeachers");
+
+      if (!res.ok) {
+        console.log("Fetch failed");
+        setArr([]);
+        return;
+      }
+
+      let data = await res.json();
+      setArr(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.log("Error:", err);
+      setArr([]);
+    }
   }
 
   useEffect(() => {
@@ -30,7 +42,7 @@ function TeacherPageSS(props) {
   }, []);
 
   const filteredArr = arr.filter((x) =>
-    x.t_name?.toLowerCase().includes(search.toLowerCase())
+    (x.t_name || "").toLowerCase().includes(search.trim().toLowerCase())
   );
 
   function handleChange(e) {
@@ -149,6 +161,7 @@ function TeacherPageSS(props) {
                     <th>Delete</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {
                     filteredArr.length > 0 ? (
@@ -182,10 +195,10 @@ function TeacherPageSS(props) {
         <Modal.Header closeButton>
           <Modal.Title>{isEdit ? "Update Teacher" : "Add Teacher"}</Modal.Title>
         </Modal.Header>
+
         <Modal.Body>
           <Form>
             <Form.Control className="mb-2" placeholder="Name" name="t_name" value={teacher.t_name} onChange={handleChange}/>
-
             <Form.Control className="mb-2" placeholder="Email" name="t_email" value={teacher.t_email} onChange={handleChange}/>
 
             <Form.Select className="mb-2" name="t_gender" value={teacher.t_gender} onChange={handleChange}>
@@ -195,7 +208,6 @@ function TeacherPageSS(props) {
             </Form.Select>
 
             <Form.Control className="mb-2" placeholder="Subject" name="t_subject" value={teacher.t_subject} onChange={handleChange}/>
-
             <Form.Control className="mb-2" placeholder="Salary" name="t_salary" value={teacher.t_salary} onChange={handleChange}/>
 
             <Form.Select className="mb-2" name="status" value={teacher.status} onChange={handleChange}>
@@ -206,6 +218,7 @@ function TeacherPageSS(props) {
             <Form.Control className="mb-2" placeholder="Password" name="t_password" value={teacher.t_password} onChange={handleChange}/>
           </Form>
         </Modal.Body>
+
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShow(false)}>Cancel</Button>
           <Button variant="success" onClick={saveTeacher}>{isEdit ? "Update" : "Add"}</Button>

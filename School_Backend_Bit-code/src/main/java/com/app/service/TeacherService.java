@@ -59,8 +59,9 @@ public class TeacherService {
 		Teacher tec = tr.findById(t.getT_id()).orElseThrow(()-> new RuntimeException("Teacher Not Found"));
 		if(tec != null) {
 			tec.setT_password(t.getT_password());
+			return tr.save(tec);
 		}
-		return tr.save(tec);	
+		return null;
 	}
 	
 }

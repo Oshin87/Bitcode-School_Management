@@ -26,8 +26,9 @@ public class StudentService {
 		Student std = sr.findById(id).orElseThrow(()-> new RuntimeException("Student Not Found"));
 		if(std != null) {
 			std.setStd_password(pass);
+			return sr.save(std);
 		}
-		return sr.save(std);	
+		return null;	
 	}
 	
 }

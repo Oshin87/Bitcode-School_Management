@@ -33,21 +33,30 @@ function StudentPageSS(props) {
       return;
     }
 
-    let res = await fetch(
-      `http://localhost:8080/studentSection/getStudent?std_class=${stdClass}`
-    );
+    try {
+      let res = await fetch(`http://localhost:8080/studentSection/getStudent?std_class=${stdClass}`);
 
-    let data = await res.json();
-    setArr(data);
+      if (!res.ok) throw new Error("API error");
+
+      let data = await res.json();
+      setArr(data);
+    } catch (err) {
+      console.log(err);
+      setArr([]);
+    }
   }
 
   useEffect(() => {
-    getStudents();
+    if (stdClass) {
+      getStudents();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stdClass]);
 
-  const filteredArr = arr.filter((x) =>
-    x.std_name?.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredArr = arr.filter((x) => {
+    if (!search) return true;
+    return (x.std_name || "").toLowerCase().includes(search.toLowerCase());
+  });
 
   function handleChange(e) {
     setStudent({
@@ -171,8 +180,8 @@ function StudentPageSS(props) {
 
       <Row className="mt-3">
         <Col md={3}>
-          <Form.Select onChange={(e) => setStdClass(e.target.value)}>
-            <option>--Select--</option>
+          <Form.Select onChange={(e) => setStdClass(e.target.value ? Number(e.target.value) : "")}>
+            <option value="">--Select--</option>
             {[...Array(10)].map((_, i) => (
               <option key={i} value={i + 1}>Class {i + 1}</option>
             ))}
@@ -189,6 +198,7 @@ function StudentPageSS(props) {
           <Card className="section-card">
             <Card.Body>
               <h5 className="mb-3">All Students</h5>
+
               <Table striped bordered hover responsive>
                 <thead>
                   <tr>
@@ -229,13 +239,14 @@ function StudentPageSS(props) {
                     )
                   }
                 </tbody>
+
               </Table>
             </Card.Body>
           </Card>
         </Col>
       </Row>
 
-      <Modal show={show} onHide={() => setShow(false)} centered scrollable>
+        <Modal show={show} onHide={() => setShow(false)} centered scrollable>
         <Modal.Header closeButton>
           <Modal.Title>{isEdit ? "Update Student" : "Add Student"}</Modal.Title>
         </Modal.Header>
@@ -321,9 +332,11 @@ function StudentPageSS(props) {
             )
           }
         </Modal.Body>
-      </Modal>
+      </Modal> 
+
     </div>
   );
 }
 
 export default StudentPageSS;
+
