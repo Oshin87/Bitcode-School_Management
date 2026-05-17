@@ -1,0 +1,188 @@
+.admission-page{
+    width: 100%;
+}
+
+
+.admission-hero{
+    height: 55vh;
+
+    background-image: url("../../assets/img2.jpg");
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.admission-overlay{
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 20px;
+}
+
+.admission-overlay h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.admission-overlay p{
+    font-size: 20px;
+    width: 70%;
+    line-height: 1.8;
+}
+
+
+.admission-container{
+    width: 90%;
+
+    margin: 60px auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+
+.admission-info h2{
+    color: #0d47a1;
+
+    margin-bottom: 20px;
+
+    font-size: 38px;
+}
+
+.admission-info p{
+    line-height: 1.9;
+    margin-bottom: 35px;
+
+    font-size: 17px;
+}
+
+.features{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 25px;
+}
+
+.feature-card{
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.feature-card:hover{
+    transform: translateY(-5px);
+}
+
+.feature-card h3{
+    margin-bottom: 15px;
+
+    color: #0d47a1;
+}
+
+
+.admission-form-container{
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.admission-form-container h2{
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    color: #0d47a1;
+
+    font-size: 35px;
+}
+
+.admission-form{
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.admission-form input,
+.admission-form textarea{
+    padding: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.admission-form input:focus,
+.admission-form textarea:focus{
+    border-color: #0d47a1;
+}
+
+.admission-form button{
+    background: #0d47a1;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.admission-form button:hover{
+    background: #1565c0;
+}
+
+
+@media(max-width: 900px){
+
+    .admission-container{
+        grid-template-columns: 1fr;
+    }
+
+    .admission-overlay h1{
+        font-size: 40px;
+    }
+
+    .admission-overlay p{
+        width: 90%;
+    }
+
+}
